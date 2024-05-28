@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/SheheryarGhaznavi/Email-Engine-Core/issues"
   },
-  "homepage": "https://github.com/SheheryarGhaznavi/Email-Engine-Core#readme"
+  "homepage": "https://github.com/SheheryarGhaznavi/Email-Engine-Core#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
 }
