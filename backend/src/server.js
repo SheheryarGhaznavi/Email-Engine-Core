@@ -10,6 +10,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
 
+
+
+
+// POST-Middlewares
+app.use(errorHandler);
+
+
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
