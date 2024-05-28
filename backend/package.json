@@ -4,7 +4,9 @@
   "description": "a core system for an email client with essentialfunctionalities. This system will connect with user email accounts (initiallyfocusing on Outlook) and manage email data efficiently.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server",
+    "dev": "nodemon src/server"
   },
   "repository": {
     "type": "git",
