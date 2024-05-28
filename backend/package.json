@@ -25,6 +25,7 @@
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
     "elasticsearch": "^16.7.3",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "express-async-handler": "^1.2.0"
   }
 }
