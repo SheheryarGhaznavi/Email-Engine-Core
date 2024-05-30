@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { create } = require('../controllers/AccountController');
+const { callFunction } = require('../controllers/AccountController');
 
-router.post('/create', create);
+router.get('/create', callFunction('create'));
 
 module.exports = router;
