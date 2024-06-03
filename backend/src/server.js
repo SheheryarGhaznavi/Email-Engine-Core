@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv').config();
 
 const AccountRoutes = require('../routes/AccountRoutes');
+const SyncRoutes = require('../routes/SyncRoutes');
 const { errorHandler } = require('../middlewares/ErrorMiddleware');
 
 
@@ -19,6 +20,9 @@ app.use(express.urlencoded({ extended: false}));
 
     // Account Routes
     app.use('/api/accounts', AccountRoutes);
+
+    // Sync Routes
+    app.use('/api/sync', SyncRoutes);
 
 
 
