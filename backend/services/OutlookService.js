@@ -28,7 +28,19 @@ const getAuthorizationCode = async (code) => {
     return token_response.data;
 };
 
+const fetchEmails = async (access_token) => {
+
+    const response = await axios.get('https://graph.microsoft.com/v1.0/me/mailFolders/inbox/messages', {
+        headers: {
+            Authorization: `Bearer ${access_token}`,
+        },
+    });
+  
+    return response.data.value;
+  };
+
 module.exports = {
     getAuthUrl,
-    getAuthorizationCode
+    getAuthorizationCode,
+    fetchEmails
 };

@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { callFunction } = require('../controllers/AccountController');
+const { callFunction } = require('../controllers/SyncController');
 
 const router = express.Router();
 
