@@ -1,6 +1,8 @@
 const express = require('express');
-const router = express.Router();
+
 const { callFunction } = require('../controllers/AccountController');
+
+const router = express.Router();
 
 router.get('/create', callFunction('create'));
 router.get('/callback', callFunction('callback'));
