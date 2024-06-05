@@ -21,11 +21,11 @@ const getAuthorizationCode = async (code) => {
         client_id: config.outlook.clientId,
         client_secret: config.outlook.clientSecret,
         code: code,
-        redirect_uri: config.outlook.redirectUri,
-        grant_type: 'authorization_code',
+        redirect_uri: config.outlook.frontendRedirectUri,
+        grant_type: 'authorization_code'
     }));
   
-    return token_response.data;
+    return config.outlook.frontendRedirectUri+'/'+token_response.data.access_token;
 };
 
 const fetchEmails = async (access_token) => {

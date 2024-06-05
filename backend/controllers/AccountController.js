@@ -7,17 +7,16 @@ class AccountController extends BaseController
     async create(request, response)
     {
         const authUrl = OutlookService.getAuthUrl();
-        response.redirect(authUrl);
+        response.status(200).send(authUrl);
     }
 
     /// receive a callback after login
     async callback(request, response)
     {
         const { code } = request.query;
-        const tokenData = await OutlookService.getAuthorizationCode(code);
+        const redirect_url = await OutlookService.getAuthorizationCode(code);
       
-        console.log(tokenData);
-        response.status(200).json({'message' : 'Account login', 'request' : tokenData});
+        response.redirect(redirect_url);
     }
 }
 
