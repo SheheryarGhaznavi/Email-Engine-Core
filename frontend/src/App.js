@@ -8,7 +8,7 @@ const App = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<AddAccount />} />
-                <Route path="/sync" element={<SyncEmails />} />
+                <Route path="/sync/:token" element={<SyncEmails />} />
             </Routes>
         </BrowserRouter>
     );

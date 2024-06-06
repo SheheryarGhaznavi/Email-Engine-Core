@@ -11,7 +11,10 @@ const indexEmails = async (emails) => {
     if (bulkResponse.errors) {
         const erroredDocuments = bulkResponse.items.filter(item => item.index && item.index.error);
         console.error('Error indexing emails:', erroredDocuments);
+        throw error('Error indexing emails:', erroredDocuments);
     }
+
+    return body;
 };
 
 module.exports = {

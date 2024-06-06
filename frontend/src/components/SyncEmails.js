@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const SyncEmails = () => {
     const [emails, setEmails] = useState([]);
@@ -7,8 +8,9 @@ const SyncEmails = () => {
     useEffect(() => {
         const fetchEmails = async () => {
         try {
-            const response = await axios.get('http://localhost:5001/api/sync'); // Adjust endpoint as needed
-            setEmails(response.data);
+            const { id } = useParams();
+            const response = await axios.post('http://localhost:5001/api/sync',{ accessToken: id }); // retrieving emails
+            setEmails(response.data.emails);
         } catch (error) {
             console.error('Error fetching emails:', error);
         }
