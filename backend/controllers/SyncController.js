@@ -1,5 +1,6 @@
 const BaseController = require('./BaseController');
 const OutlookService = require('../services/OutlookService');
+const ElasticsearchService = require('../services/ElasticsearchService');
 
 class SyncController extends BaseController
 {
@@ -11,6 +12,7 @@ class SyncController extends BaseController
         try {
 
             const emails = await OutlookService.fetchEmails(accessToken);
+            await ElasticsearchService.indexEmails(emails);
             response.status(200).send({'message' : 'Emails synchronized successfully', 'emails' : emails});
 
         } catch (error) {
